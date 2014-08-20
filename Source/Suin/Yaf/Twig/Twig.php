@@ -5,7 +5,7 @@ namespace Suin\Yaf\Twig;
 use \Twig_Loader_Filesystem;
 use \Twig_Environment;
 
-class Twig implements \Yaf_View_Interface
+class Twig implements \Yaf\View_Interface
 {
 	/** @var \Twig_Loader_Filesystem */
 	protected $loader;
