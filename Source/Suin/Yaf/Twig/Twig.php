@@ -14,6 +14,8 @@ class Twig implements \Yaf\View_Interface
 
 	protected $variables = array();
 
+	private $template;
+
 	/**
 	 * @param string $templateDir
 	 * @param array  $options
@@ -109,7 +111,17 @@ class Twig implements \Yaf\View_Interface
 			$this->variables = array_merge($this->variables, $variables);
 		}
 
+		$template = $this->template ?: $template;
+
 		return $this->twig->loadTemplate($template)->render($this->variables);
+	}
+
+	/**
+	 * @param $template
+	 */
+	public function setTemplate($template)
+	{
+		$this->template = $template;
 	}
 
 	/**
